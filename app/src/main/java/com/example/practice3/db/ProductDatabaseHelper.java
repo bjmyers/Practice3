@@ -6,6 +6,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
+import com.example.practice3.R;
 import com.example.practice3.product.Product;
 
 import java.util.ArrayList;
@@ -19,8 +20,8 @@ public class ProductDatabaseHelper extends SQLiteOpenHelper {
     private static final String ID_KEY = "id";
     private static final String NAME_KEY = "name";
     private static final String DESCRIPTION_KEY = "description";
-    private static final String SELLER_KEY = "year";
-    private static final String PRICE_KEY = "rating";
+    private static final String SELLER_KEY = "seller";
+    private static final String PRICE_KEY = "price";
     private static final String IMAGE_KEY = "image";
 
     public ProductDatabaseHelper(final Context context) {
@@ -44,7 +45,7 @@ public class ProductDatabaseHelper extends SQLiteOpenHelper {
                 NAME_KEY + " TEXT," +
                 DESCRIPTION_KEY + " TEXT," +
                 SELLER_KEY + " TEXT," +
-                PRICE_KEY + " REAL" +
+                PRICE_KEY + " REAL," +
                 IMAGE_KEY + " INTEGER" +
                 ")";
     }
@@ -108,6 +109,7 @@ public class ProductDatabaseHelper extends SQLiteOpenHelper {
         values.put(DESCRIPTION_KEY, "Sedan");
         values.put(SELLER_KEY, "Honda");
         values.put(PRICE_KEY, 10000.0);
+        values.put(IMAGE_KEY, R.drawable.civic);
         database.insert(PRODUCTS_TABLE, null, values);
 
         values = new ContentValues();
@@ -116,6 +118,7 @@ public class ProductDatabaseHelper extends SQLiteOpenHelper {
         values.put(DESCRIPTION_KEY, "SUV");
         values.put(SELLER_KEY, "Ford");
         values.put(PRICE_KEY, 15000.99);
+        values.put(IMAGE_KEY, R.drawable.escape);
         database.insert(PRODUCTS_TABLE, null, values);
 
         values = new ContentValues();
@@ -124,6 +127,7 @@ public class ProductDatabaseHelper extends SQLiteOpenHelper {
         values.put(DESCRIPTION_KEY, "Pickup truck");
         values.put(SELLER_KEY, "Dodge");
         values.put(PRICE_KEY, 23556.5555);
+        values.put(IMAGE_KEY, R.drawable.ram);
         database.insert(PRODUCTS_TABLE, null, values);
 
         database.close();

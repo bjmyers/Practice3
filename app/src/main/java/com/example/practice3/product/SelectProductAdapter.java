@@ -5,6 +5,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -48,6 +49,7 @@ public class SelectProductAdapter extends RecyclerView.Adapter<SelectProductAdap
         holder.nameTextView.setText("Model: " + product.getName());
         holder.sellerTextView.setText("Make: " + product.getSeller());
         holder.priceTextView.setText(String.format("$%.2f", product.getPrice()));
+        holder.imageView.setImageResource(product.getImageId());
 
         // Make a listener for the checkbox, will add or remove the product from the set of
         // selected items
@@ -77,6 +79,7 @@ public class SelectProductAdapter extends RecyclerView.Adapter<SelectProductAdap
 
         public CheckBox productSelect;
         public TextView nameTextView, sellerTextView, priceTextView;
+        public ImageView imageView;
 
         public ViewHolder(View itemView) {
             super(itemView);
@@ -84,6 +87,7 @@ public class SelectProductAdapter extends RecyclerView.Adapter<SelectProductAdap
             nameTextView = itemView.findViewById(R.id.select_product_name);
             sellerTextView = itemView.findViewById(R.id.select_product_seller);
             priceTextView = itemView.findViewById(R.id.select_product_price);
+            imageView = itemView.findViewById(R.id.select_product_image);
         }
     }
 }

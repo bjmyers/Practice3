@@ -3,6 +3,7 @@ package com.example.practice3.product;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -42,6 +43,7 @@ public class DetailsProductAdapter extends RecyclerView.Adapter<DetailsProductAd
         holder.descriptionTextView.setText("Type: " + product.getDescription());
         holder.sellerTextView.setText("Make: " + product.getSeller());
         holder.priceTextView.setText(String.format("Price: $%.2f", product.getPrice()));
+        holder.imageView.setImageResource(product.getImageId());
     }
 
     public void clearProducts() {
@@ -58,6 +60,7 @@ public class DetailsProductAdapter extends RecyclerView.Adapter<DetailsProductAd
 
     public class DetailsViewHolder extends RecyclerView.ViewHolder {
         public TextView idTextView, nameTextView, descriptionTextView, sellerTextView, priceTextView;
+        public ImageView imageView;
 
         public DetailsViewHolder(View itemView) {
             super(itemView);
@@ -66,6 +69,7 @@ public class DetailsProductAdapter extends RecyclerView.Adapter<DetailsProductAd
             descriptionTextView = itemView.findViewById(R.id.product_description);
             sellerTextView = itemView.findViewById(R.id.product_seller);
             priceTextView = itemView.findViewById(R.id.product_price);
+            imageView = itemView.findViewById(R.id.product_image);
         }
     }
 }
