@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Practice3</string>
+    <string name="main_button">Expand Products</string>
+    <string name="mail_button">Email Info</string>
+</resources>
